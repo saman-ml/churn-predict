@@ -47,15 +47,15 @@ if st.button("Predict Price"):
     
     for InternetService_col in InternetService_list:
         user_data[InternetService_col] = 0
-        user_data[InternetService] = 1
+    user_data[InternetService] = 1
         
     for Contract_list_col in Contract_list:
         user_data[Contract_list_col] = 0
-        user_data[Contract] = 1
+    user_data[Contract] = 1
         
     for col in PaymentMethod_list:
         user_data[col] = 0
-        user_data[PaymentMethod] = 1
+    user_data[PaymentMethod] = 1
     
     prediction = model.predict(user_data)[0]
     
