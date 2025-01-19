@@ -11,7 +11,7 @@ Partner = st.selectbox("Partner", options=[0, 1], format_func=lambda x: "Yes" if
 Dependents = st.selectbox("Dependents", options=[0, 1], format_func=lambda x: "Yes" if x else "No")
 tenure = st.number_input('tenure', 1,100)
 PhoneService = st.selectbox("PhoneService", options=[0, 1], format_func=lambda x: "Yes" if x else "No")
-MultipleLines = st.selectbox("PhoneService", options=[0, 1], format_func=lambda x: "Yes" if x else "No")
+MultipleLines = st.selectbox("MultipleLines", options=[0, 1], format_func=lambda x: "Yes" if x else "No")
 InternetService = st.selectbox("InternetService", InternetService_list)
 OnlineSecurity = st.selectbox("OnlineSecurity", options=[0, 1], format_func=lambda x: "Male" if x else "Female")
 OnlineBackup = st.selectbox("OnlineBackup", options=[0, 1], format_func=lambda x: "Male" if x else "Female")
