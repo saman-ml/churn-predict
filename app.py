@@ -4,6 +4,9 @@ import streamlit as st
 from utils import InternetService_list, Contract_list, PaymentMethod_list
 
 model = joblib.load('churn.joblib')
+model_features = model.feature_names_in_
+
+
 st.title('Churn Prediction')
 gender = st.selectbox("Gender", options=[0, 1], format_func=lambda x: "Male" if x else "Female")
 SeniorCitizen = st.selectbox("SeniorCitizen", options=[0, 1], format_func=lambda x: "Yes" if x else "No")
@@ -57,8 +60,6 @@ if st.button("Predict Price"):
         user_data[InternetService_col] = 0
     user_data[InternetService] = 1
         
-    model_features = model.feature_names_in_
-
     user_data_aligned = pd.DataFrame(columns=model_features)
 
     for feature in model_features:
