@@ -57,7 +57,7 @@ if st.button("Predict Price"):
         user_data[col] = 0
         user_data[PaymentMethod] = 1
     
-    prediction = model.predict(user_data)[0]
+    prediction = model.predict(user_data)
     
     if (prediction== 1):
         st.write("### Churn is True")
