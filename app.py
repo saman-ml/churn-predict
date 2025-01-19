@@ -57,7 +57,15 @@ if st.button("Predict Price"):
         user_data[InternetService_col] = 0
     user_data[InternetService] = 1
         
+    model_features = model.feature_names_in_
 
+    user_data_aligned = pd.DataFrame(columns=model_features)
+
+    for feature in model_features:
+        if feature in user_data.columns:
+            user_data_aligned[feature] = user_data[feature]
+        else:
+            user_data_aligned[feature] = 0 
     
     prediction = model.predict(user_data)[0]
     
